@@ -1,0 +1,38 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "Legacy",
+    "courses": "Courses",
+    "placements": "Results",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Shree Venkateshwara Institute of Commerce",
+    "subtitle": "Karnataka's trusted commerce skill institute for typewriting, shorthand, stenography, computer education, and result-focused training since 1975.",
+    "cta": "Start Admission Inquiry"
+  },
+  "about": {
+    "title": "A 50-Year Legacy of Precision",
+    "subtitle": "Guiding Careers Since 1994",
+    "text": "Welcome to Shree Venkateshwara Institute of Commerce. Established in 1975, our institution has stood as a foundational milestone for commercial and technical excellence in Chikkamagaluru. For over three decades under our current administration, we have cultivated a disciplined environment optimized for speed, accuracy, confidence, and state examination success."
+  },
+  "courses": {
+    "title": "Professional Skill Streams",
+    "c1": "Typewriter Mechanical Typing (KSEAB Junior/Senior)",
+    "c2": "Stenography & Shorthand Proficiency",
+    "c3": "Advanced Computer Education & Office Automation"
+  },
+  "placements": {
+    "title": "Court Placement Wall of Fame",
+    "subtitle": "Practical evaluations directly aligned with the strict speed and accuracy benchmarks of the Karnataka School Examination and Assessment Board (KSEAB), Bengaluru."
+  },
+  "contact": {
+    "title": "Admissions Desk",
+    "address_label": "Physical Address",
+    "form_name": "Full Name",
+    "form_phone": "Phone Number",
+    "form_course": "Choose Program",
+    "form_submit": "Send Admission Inquiry",
+    "form_success": "Inquiry successfully submitted! Our administrative desk will contact you shortly."
+  }
+}
