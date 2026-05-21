@@ -9,7 +9,6 @@ import {
   Crown,
   Cpu,
   Gauge,
-  GraduationCap,
   Keyboard,
   Mail,
   MapPin,
@@ -25,8 +24,9 @@ import {
 } from 'lucide-react';
 import { getDictionary } from '@/lib/dictionary';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
-import InquiryForm from '@/components/InquiryForm';
 import HeroFrameSequence from '@/components/HeroFrameSequence';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
 
 export default async function MainWebParadise({ params }) {
   const { lang } = await params;
@@ -203,13 +203,15 @@ export default async function MainWebParadise({ params }) {
           </nav>
 
           <div className="flex items-center gap-2">
-            <a
-              href="tel:+919448201966"
-              className="hidden items-center gap-2 rounded-md bg-white px-4 py-2 text-xs font-bold text-slate-950 transition hover:bg-amber-200 sm:flex"
+            <Button
+              render={<a href="tel:+919448201966" />}
+              nativeButton={false}
+              variant="secondary"
+              className="hidden h-auto items-center gap-2 rounded-md bg-white px-4 py-2 text-xs font-bold text-slate-950 transition hover:bg-amber-200 sm:flex"
             >
               <Phone className="h-4 w-4" />
               {d.common.phoneCta}
-            </a>
+            </Button>
             <LanguageSwitcher />
           </div>
         </div>
@@ -236,28 +238,34 @@ export default async function MainWebParadise({ params }) {
                 {d.hero.subtitle}
               </p>
 
-              <div className="mt-6 grid max-w-2xl grid-cols-1 gap-2 sm:mt-7 sm:grid-cols-3 sm:gap-3">
+              <div className="mt-6 flex max-w-3xl flex-wrap gap-2 sm:mt-7 sm:gap-3">
                 {d.hero.facts.map((item) => (
-                  <div key={item} className="border border-white/10 bg-slate-950/45 px-3 py-3 text-[10px] font-black uppercase tracking-[0.15em] text-slate-200 backdrop-blur sm:px-4 sm:text-xs">
-                    {item}
-                  </div>
+                  <Card key={item} className="rounded-md border border-white/10 bg-white/[0.07] py-0 text-slate-100 shadow-lg shadow-black/10 ring-0 backdrop-blur">
+                    <CardContent className="flex min-h-10 items-center gap-2 px-3 py-2 text-[10px] font-black uppercase tracking-[0.14em] sm:px-4 sm:text-xs">
+                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-amber-300 shadow-[0_0_14px_rgba(252,211,77,0.65)]" />
+                      <span className="whitespace-nowrap">{item}</span>
+                    </CardContent>
+                  </Card>
                 ))}
               </div>
 
               <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row">
-                <a
-                  href="#contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-md bg-amber-400 px-5 py-3.5 text-sm font-black text-slate-950 shadow-xl shadow-amber-400/20 transition hover:bg-amber-300 sm:px-6 sm:py-4"
+                <Button
+                  render={<a href="tel:+919448201966" />}
+                  nativeButton={false}
+                  className="inline-flex h-auto items-center justify-center gap-2 rounded-md bg-amber-400 px-5 py-3.5 text-sm font-black text-slate-950 shadow-xl shadow-amber-400/20 transition hover:bg-amber-300 sm:px-6 sm:py-4"
                 >
                   {d.hero.cta}
-                  <ArrowRight className="h-4 w-4" />
-                </a>
-                <a
-                  href="#results"
-                  className="inline-flex items-center justify-center gap-2 rounded-md border border-white/20 bg-white/10 px-5 py-3.5 text-sm font-bold text-white backdrop-blur transition hover:bg-white/15 sm:px-6 sm:py-4"
+                  <Phone className="h-4 w-4" />
+                </Button>
+                <Button
+                  render={<a href="#results" />}
+                  nativeButton={false}
+                  variant="outline"
+                  className="inline-flex h-auto items-center justify-center gap-2 rounded-md border-white/20 bg-white/10 px-5 py-3.5 text-sm font-bold text-white backdrop-blur transition hover:bg-white/15 hover:text-white sm:px-6 sm:py-4"
                 >
                   {d.hero.secondaryCta}
-                </a>
+                </Button>
               </div>
 
             </div>
@@ -284,14 +292,16 @@ export default async function MainWebParadise({ params }) {
             {stats.map((stat) => {
               const Icon = stat.icon;
               return (
-                <div key={stat.label} className="flex items-start gap-4 border-t border-slate-200 px-1 py-4 first:border-t-0 sm:border-l sm:border-t-0 sm:px-4 sm:first:border-l-0">
-                  <Icon className={`mt-1 h-6 w-6 shrink-0 ${stat.color}`} />
-                  <div>
-                    <p className="text-3xl font-black tracking-tight text-slate-950">{stat.value}</p>
-                    <p className="mt-1 text-sm font-bold text-slate-800">{stat.label}</p>
-                    <p className="mt-1 text-xs leading-5 text-slate-500">{stat.detail}</p>
-                  </div>
-                </div>
+                <Card key={stat.label} className="rounded-none border-0 border-t border-slate-200 bg-transparent py-4 ring-0 first:border-t-0 sm:border-l sm:border-t-0 sm:first:border-l-0">
+                  <CardContent className="flex items-start gap-4 px-1 sm:px-4">
+                    <Icon className={`mt-1 h-6 w-6 shrink-0 ${stat.color}`} />
+                    <div>
+                      <p className="text-3xl font-black tracking-tight text-slate-950">{stat.value}</p>
+                      <p className="mt-1 text-sm font-bold text-slate-800">{stat.label}</p>
+                      <p className="mt-1 text-xs leading-5 text-slate-500">{stat.detail}</p>
+                    </div>
+                  </CardContent>
+                </Card>
               );
             })}
           </div>
@@ -312,7 +322,8 @@ export default async function MainWebParadise({ params }) {
           <div className="absolute inset-0 bg-slate-950/88" />
           <div className="sv-grid absolute inset-0 opacity-20" />
           <div className="relative z-10 mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center xl:gap-12">
-            <div className="sv-film-frame border border-white/15 bg-slate-900/88 p-4 shadow-2xl shadow-black/35 backdrop-blur-xl sm:p-5 lg:p-6">
+            <Card className="sv-film-frame relative rounded-none border border-white/15 bg-slate-900/88 py-0 text-white shadow-2xl shadow-black/35 ring-0 backdrop-blur-xl">
+              <CardContent className="p-4 sm:p-5 lg:p-6">
               <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-4">
                 <div className="min-w-0">
                   <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-cyan-300 sm:text-xs">
@@ -329,10 +340,12 @@ export default async function MainWebParadise({ params }) {
 
               <div className="grid grid-cols-2 gap-2 py-4 sm:gap-3 sm:py-5">
                 {resultMetrics.map((metric) => (
-                  <div key={metric.label} className="border border-white/10 bg-white/10 p-3 sm:p-4">
-                    <p className="text-2xl font-black text-white sm:text-3xl">{metric.value}</p>
-                    <p className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-slate-400 sm:text-xs">{metric.label}</p>
-                  </div>
+                  <Card key={metric.label} className="rounded-none border border-white/10 bg-white/10 py-0 text-white ring-0">
+                    <CardContent className="p-3 sm:p-4">
+                      <p className="text-2xl font-black text-white sm:text-3xl">{metric.value}</p>
+                      <p className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-slate-400 sm:text-xs">{metric.label}</p>
+                    </CardContent>
+                  </Card>
                 ))}
               </div>
 
@@ -345,15 +358,18 @@ export default async function MainWebParadise({ params }) {
                 ))}
               </div>
 
-              <div className="mt-5 border border-amber-300/20 bg-amber-300/10 p-4">
+              <Card className="mt-5 rounded-none border border-amber-300/20 bg-amber-300/10 py-0 text-white ring-0">
+                <CardContent className="p-4">
                 <p className="text-[10px] font-black uppercase tracking-[0.22em] text-amber-200 sm:text-xs">
                   {d.resultSystem.academicSignalTitle}
                 </p>
                 <p className="mt-2 text-xs font-semibold leading-6 text-slate-200 sm:text-sm">
                   {d.resultSystem.academicSignalText}
                 </p>
-              </div>
-            </div>
+                </CardContent>
+              </Card>
+              </CardContent>
+            </Card>
 
             <div className="space-y-5">
               <div>
@@ -370,15 +386,17 @@ export default async function MainWebParadise({ params }) {
                 {academySignals.map((signal) => {
                   const Icon = signal.icon;
                   return (
-                    <div key={signal.title} className="group flex gap-3 border border-white/10 bg-white/[0.07] p-4 backdrop-blur transition hover:border-cyan-300/40 hover:bg-white/10 sm:gap-4 sm:p-5">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-cyan-300 text-slate-950 sm:h-12 sm:w-12">
-                        <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
-                      </div>
-                      <div>
-                        <h3 className="font-black text-white">{signal.title}</h3>
-                        <p className="mt-2 text-sm leading-6 text-slate-300">{signal.text}</p>
-                      </div>
-                    </div>
+                    <Card key={signal.title} className="group rounded-none border border-white/10 bg-white/[0.07] py-0 text-white ring-0 backdrop-blur transition hover:border-cyan-300/40 hover:bg-white/10">
+                      <CardContent className="flex gap-3 p-4 sm:gap-4 sm:p-5">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-cyan-300 text-slate-950 sm:h-12 sm:w-12">
+                          <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
+                        </div>
+                        <div>
+                          <h3 className="font-black text-white">{signal.title}</h3>
+                          <p className="mt-2 text-sm leading-6 text-slate-300">{signal.text}</p>
+                        </div>
+                      </CardContent>
+                    </Card>
                   );
                 })}
               </div>
@@ -390,7 +408,8 @@ export default async function MainWebParadise({ params }) {
           <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="relative">
               <div className="absolute -left-4 -top-4 h-full w-full border border-amber-400/50" />
-              <div className="relative overflow-hidden bg-white p-3 shadow-2xl shadow-slate-900/10">
+              <Card className="relative rounded-none bg-white py-0 shadow-2xl shadow-slate-900/10 ring-0">
+                <CardContent className="p-3">
                 <Image
                   src="/images/principal.png"
                   alt={d.common.principalAlt}
@@ -403,7 +422,8 @@ export default async function MainWebParadise({ params }) {
                   <h3 className="mt-2 text-lg font-black sm:text-xl">{d.common.principalName}</h3>
                   <p className="mt-1 text-sm text-slate-300">{d.about.subtitle}</p>
                 </div>
-              </div>
+                </CardContent>
+              </Card>
             </div>
 
             <div>
@@ -419,11 +439,13 @@ export default async function MainWebParadise({ params }) {
                 {excellenceTracks.map((track) => {
                   const Icon = track.icon;
                   return (
-                    <div key={track.title} className="border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
-                      <Icon className="h-7 w-7 text-slate-950" />
-                      <h3 className="mt-4 text-base font-black text-slate-950">{track.title}</h3>
-                      <p className="mt-3 text-sm leading-6 text-slate-600">{track.text}</p>
-                    </div>
+                    <Card key={track.title} className="rounded-none border border-slate-200 bg-white py-0 shadow-sm ring-0">
+                      <CardContent className="p-4 sm:p-5">
+                        <Icon className="h-7 w-7 text-slate-950" />
+                        <h3 className="mt-4 text-base font-black text-slate-950">{track.title}</h3>
+                        <p className="mt-3 text-sm leading-6 text-slate-600">{track.text}</p>
+                      </CardContent>
+                    </Card>
                   );
                 })}
               </div>
@@ -444,21 +466,34 @@ export default async function MainWebParadise({ params }) {
                 </p>
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="border border-emerald-300/30 bg-emerald-300 p-5 text-slate-950 sm:p-6">
-                  <p className="text-5xl font-black tracking-tight sm:text-6xl">100%</p>
-                  <p className="mt-2 text-lg font-black">{d.results.focusTitle}</p>
-                  <p className="mt-3 text-sm font-semibold leading-6 text-slate-800">
-                    {d.results.focusText}
-                  </p>
-                </div>
-                <div className="border border-white/10 bg-white/10 p-5 sm:p-6">
-                  <Crown className="h-9 w-9 text-amber-300" />
-                  <p className="mt-5 text-2xl font-black">{d.results.excellenceTitle}</p>
-                  <p className="mt-3 text-sm leading-6 text-slate-300">
-                    {d.results.excellenceText}
-                  </p>
-                </div>
+              <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+                <Card className="rounded-none border border-emerald-300/30 bg-emerald-300 py-0 text-slate-950 ring-0">
+                  <CardContent className="p-5 sm:p-6">
+                    <p className="text-5xl font-black tracking-tight sm:text-6xl">100%</p>
+                    <p className="mt-2 text-lg font-black">{d.results.focusTitle}</p>
+                    <p className="mt-3 text-sm font-semibold leading-6 text-slate-800">
+                      {d.results.focusText}
+                    </p>
+                  </CardContent>
+                </Card>
+                <Card className="rounded-none border border-white/10 bg-white/10 py-0 text-white ring-0">
+                  <CardContent className="p-5 sm:p-6">
+                    <Crown className="h-9 w-9 text-amber-300" />
+                    <p className="mt-5 text-2xl font-black">{d.results.excellenceTitle}</p>
+                    <p className="mt-3 text-sm leading-6 text-slate-300">
+                      {d.results.excellenceText}
+                    </p>
+                  </CardContent>
+                </Card>
+                <Card className="rounded-none border border-amber-300/25 bg-amber-300/10 py-0 text-white ring-0 sm:col-span-2 xl:col-span-1">
+                  <CardContent className="p-5 sm:p-6">
+                    <ShieldCheck className="h-9 w-9 text-amber-300" />
+                    <p className="mt-5 text-2xl font-black">{d.results.certificateTitle}</p>
+                    <p className="mt-3 text-sm leading-6 text-slate-300">
+                      {d.results.certificateText}
+                    </p>
+                  </CardContent>
+                </Card>
               </div>
             </div>
 
@@ -466,12 +501,14 @@ export default async function MainWebParadise({ params }) {
               {excellenceTracks.map((track, index) => {
                 const Icon = track.icon;
                 return (
-                  <div key={track.title} className="border border-white/10 bg-white/[0.06] p-5 sm:p-6">
-                    <p className="text-xs font-black uppercase tracking-[0.24em] text-slate-500">0{index + 1}</p>
-                    <Icon className="mt-6 h-8 w-8 text-cyan-300" />
-                    <h3 className="mt-5 text-xl font-black">{track.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-slate-300">{track.text}</p>
-                  </div>
+                  <Card key={track.title} className="rounded-none border border-white/10 bg-white/[0.06] py-0 text-white ring-0">
+                    <CardContent className="p-5 sm:p-6">
+                      <p className="text-xs font-black uppercase tracking-[0.24em] text-slate-500">0{index + 1}</p>
+                      <Icon className="mt-6 h-8 w-8 text-cyan-300" />
+                      <h3 className="mt-5 text-xl font-black">{track.title}</h3>
+                      <p className="mt-3 text-sm leading-6 text-slate-300">{track.text}</p>
+                    </CardContent>
+                  </Card>
                 );
               })}
             </div>
@@ -496,20 +533,22 @@ export default async function MainWebParadise({ params }) {
               {courses.map((course) => {
                 const Icon = course.icon;
                 return (
-                  <article key={course.code} className="group border border-slate-200 bg-[#f9faf8] p-5 transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-900/10 sm:p-6">
-                    <div className="flex items-start justify-between gap-4">
-                      <div className={`flex h-12 w-12 items-center justify-center text-white ${course.accent}`}>
-                        <Icon className="h-6 w-6" />
+                  <Card key={course.code} role="article" className="group rounded-none border border-slate-200 bg-[#f9faf8] py-0 text-slate-950 ring-0 transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-900/10">
+                    <CardContent className="p-5 sm:p-6">
+                      <div className="flex items-start justify-between gap-4">
+                        <div className={`flex h-12 w-12 items-center justify-center text-white ${course.accent}`}>
+                          <Icon className="h-6 w-6" />
+                        </div>
+                        <p className="font-mono text-sm font-black uppercase text-slate-400">{d.courses.courseLabel} {course.code}</p>
                       </div>
-                      <p className="font-mono text-sm font-black uppercase text-slate-400">{d.courses.courseLabel} {course.code}</p>
-                    </div>
-                    <h3 className="mt-6 text-xl font-black leading-tight text-slate-950 sm:mt-8 sm:text-2xl">{course.name}</h3>
-                    <p className="mt-4 text-sm leading-7 text-slate-600">{course.description}</p>
-                    <div className="mt-8 flex items-center gap-2 text-sm font-black text-slate-950">
-                      {d.courses.exploreLabel}
-                      <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-                    </div>
-                  </article>
+                      <h3 className="mt-6 text-xl font-black leading-tight text-slate-950 sm:mt-8 sm:text-2xl">{course.name}</h3>
+                      <p className="mt-4 text-sm leading-7 text-slate-600">{course.description}</p>
+                      <div className="mt-8 flex items-center gap-2 text-sm font-black text-slate-950">
+                        {d.courses.exploreLabel}
+                        <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                      </div>
+                    </CardContent>
+                  </Card>
                 );
               })}
             </div>
@@ -530,12 +569,14 @@ export default async function MainWebParadise({ params }) {
 
             <div className="grid gap-3 sm:grid-cols-2">
               {futureSystems.map((item, index) => (
-                <div key={item} className="flex items-center gap-3 border border-white/20 bg-white/10 p-4 backdrop-blur sm:gap-4 sm:p-5">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-white text-sm font-black text-teal-800">
-                    {index + 1}
-                  </div>
-                  <p className="font-bold leading-6">{item}</p>
-                </div>
+                <Card key={item} className="rounded-none border border-white/20 bg-white/10 py-0 text-white ring-0 backdrop-blur">
+                  <CardContent className="flex items-center gap-3 p-4 sm:gap-4 sm:p-5">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-white text-sm font-black text-teal-800">
+                      {index + 1}
+                    </div>
+                    <p className="font-bold leading-6">{item}</p>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
@@ -555,18 +596,20 @@ export default async function MainWebParadise({ params }) {
 
             <div className="mt-10 grid gap-5 sm:mt-12 lg:grid-cols-3">
               {toppers.map((topper) => (
-                <article key={topper.rank} className="relative overflow-hidden border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
-                  <div className="absolute right-0 top-0 bg-slate-950 px-5 py-3 font-mono text-sm font-black text-white">
-                    {d.toppersSection.rankLabel} {topper.rank}
-                  </div>
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-amber-100 text-amber-700">
-                    <Star className="h-8 w-8 fill-amber-500 text-amber-500" />
-                  </div>
-                  <h3 className="mt-8 text-xl font-black text-slate-950 sm:text-2xl">{topper.name}</h3>
-                  <p className="mt-2 text-sm font-black uppercase tracking-[0.18em] text-rose-700">{topper.stream}</p>
-                  <p className="mt-5 text-lg font-black text-slate-800">{topper.result}</p>
-                  <p className="mt-3 text-sm leading-6 text-slate-500">{topper.note}</p>
-                </article>
+                <Card key={topper.rank} role="article" className="relative rounded-none border border-slate-200 bg-white py-0 text-slate-950 shadow-sm ring-0">
+                  <CardContent className="p-5 sm:p-6">
+                    <div className="absolute right-0 top-0 bg-slate-950 px-5 py-3 font-mono text-sm font-black text-white">
+                      {d.toppersSection.rankLabel} {topper.rank}
+                    </div>
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-amber-100 text-amber-700">
+                      <Star className="h-8 w-8 fill-amber-500 text-amber-500" />
+                    </div>
+                    <h3 className="mt-8 text-xl font-black text-slate-950 sm:text-2xl">{topper.name}</h3>
+                    <p className="mt-2 text-sm font-black uppercase tracking-[0.18em] text-rose-700">{topper.stream}</p>
+                    <p className="mt-5 text-lg font-black text-slate-800">{topper.result}</p>
+                    <p className="mt-3 text-sm leading-6 text-slate-500">{topper.note}</p>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
@@ -582,17 +625,19 @@ export default async function MainWebParadise({ params }) {
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               {pathways.map((pathway) => (
-                <div key={pathway} className="flex gap-3 border border-slate-200 bg-[#f9faf8] p-4 sm:gap-4 sm:p-5">
-                  <BriefcaseBusiness className="mt-1 h-6 w-6 shrink-0 text-cyan-700" />
-                  <p className="font-bold leading-6 text-slate-800">{pathway}</p>
-                </div>
+                <Card key={pathway} className="rounded-none border border-slate-200 bg-[#f9faf8] py-0 text-slate-950 ring-0">
+                  <CardContent className="flex gap-3 p-4 sm:gap-4 sm:p-5">
+                    <BriefcaseBusiness className="mt-1 h-6 w-6 shrink-0 text-cyan-700" />
+                    <p className="font-bold leading-6 text-slate-800">{pathway}</p>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
         </section>
 
         <section id="contact" className="bg-slate-950 px-4 py-16 text-white sm:px-6 sm:py-24 lg:px-10">
-          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(360px,520px)] lg:items-start xl:gap-14">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.22em] text-amber-300 sm:text-sm sm:tracking-[0.28em]">{d.contact.eyebrow}</p>
               <h2 className="mt-4 text-3xl font-black tracking-tight sm:text-5xl">
@@ -631,18 +676,36 @@ export default async function MainWebParadise({ params }) {
               </div>
             </div>
 
-            <div className="border border-white/10 bg-white p-4 text-slate-950 shadow-2xl shadow-black/25 sm:p-8">
-              <div className="mb-6 flex items-center gap-4 border-b border-slate-200 pb-5 sm:mb-8 sm:pb-6">
-                <div className="flex h-12 w-12 items-center justify-center bg-slate-950 text-white">
-                  <GraduationCap className="h-7 w-7" />
+            <Card className="w-full rounded-none border border-white/10 bg-white py-0 text-slate-950 shadow-2xl shadow-black/25 ring-0">
+              <CardContent className="p-5 sm:p-6 lg:p-7">
+                <div className="mb-6 flex items-center gap-3 border-b border-slate-200 pb-5">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center bg-slate-950 text-white">
+                    <Phone className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-black uppercase tracking-[0.18em] text-amber-700 sm:text-xs">{d.contact.callEyebrow}</p>
+                    <h3 className="text-xl font-black sm:text-2xl">{d.contact.callTitle}</h3>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-xs font-black uppercase tracking-[0.22em] text-amber-700">{d.contact.formEyebrow}</p>
-                  <h3 className="text-2xl font-black">{d.contact.formTitle}</h3>
+                <p className="text-sm font-semibold leading-6 text-slate-600">
+                  {d.contact.callText}
+                </p>
+                <Button
+                  render={<a href="tel:+919448201966" />}
+                  nativeButton={false}
+                  className="mt-6 h-auto w-full rounded-none bg-slate-950 px-5 py-4 text-sm font-black text-white shadow-lg shadow-slate-950/20 transition hover:bg-amber-500 hover:text-slate-950"
+                >
+                  <Phone className="h-4 w-4" />
+                  {d.contact.callButton}
+                </Button>
+                <div className="mt-5 border border-slate-200 bg-slate-50 p-4">
+                  <p className="text-xs font-black uppercase tracking-[0.18em] text-slate-500">{d.contact.callNoteLabel}</p>
+                  <p className="mt-2 text-sm font-semibold leading-6 text-slate-700">
+                    {d.contact.callNote}
+                  </p>
                 </div>
-              </div>
-              <InquiryForm d={d} />
-            </div>
+              </CardContent>
+            </Card>
           </div>
         </section>
       </main>

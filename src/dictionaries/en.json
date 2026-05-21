@@ -19,11 +19,11 @@
     "contact": "Contact"
   },
   "hero": {
-    "eyebrow": "Karnataka's trusted commerce skill institute",
+    "eyebrow": "Government recognised commerce skill institute",
     "title": "Shree Venkateshwara Institute of Commerce",
-    "subtitle": "Known by generations for typewriting, shorthand, stenography, computer education, and a result-first training culture in Chikkamagaluru, Karnataka.",
-    "facts": ["Est. 1975", "Chikkamagaluru", "Karnataka Results"],
-    "cta": "Start Admission Inquiry",
+    "subtitle": "Karnataka's trusted institute for Typewriting, Shorthand, Computer education, 100% result-focused training, and career-ready commerce skills since 1975.",
+    "facts": ["Government Recognised", "Est. 1975", "KSEAB Exam Training"],
+    "cta": "Call for Admission",
     "secondaryCta": "View 100% Result Legacy"
   },
   "about": {
@@ -76,9 +76,9 @@
     "academicSignalText": "A half-century institution with a modern presentation for today's students and parents."
   },
   "modernPresence": {
-    "eyebrow": "Modern academic presence",
-    "title": "Serious education, presented with the confidence it deserves.",
-    "text": "The site now feels more like a premium institution: immersive video, sharper messaging, and clear proof points for parents and students."
+    "eyebrow": "Recognised academic pathway",
+    "title": "Disciplined training for official examinations and career-ready skills.",
+    "text": "Students learn Typewriting, Shorthand, and Computer education through structured practice, exam-focused preparation, and guidance connected to recognised certification pathways."
   },
   "academySignals": [
     {
@@ -111,7 +111,9 @@
     "focusTitle": "Result-focused preparation",
     "focusText": "Highlighting the institute's consistent commitment to complete student success.",
     "excellenceTitle": "Karnataka Excellence",
-    "excellenceText": "A reputation built on precision training, examination discipline, and long-term student outcomes."
+    "excellenceText": "A reputation built on precision training, examination discipline, and long-term student outcomes.",
+    "certificateTitle": "Government-recognized certification",
+    "certificateText": "Typing, shorthand, and computer examinations are conducted by KSEAB. After successful completion, students receive government certificates that can support applications for eligible government career opportunities as per official notifications."
   },
   "courses": {
     "eyebrow": "Professional skill streams",
@@ -187,29 +189,22 @@
   "pathways": [
     "Court typist and stenographer roles",
     "Office administration careers",
-    "Government examination preparation",
+    "Government career applications as per official notifications",
     "Private sector documentation roles"
   ],
   "contact": {
     "eyebrow": "Admissions open",
     "title": "Start your journey with Shree Venkateshwara Institute of Commerce.",
-    "text": "Visit the institute, speak with the admissions desk, or send an inquiry for course guidance.",
+    "text": "Visit the institute or call the admissions desk directly for course guidance and further communication.",
     "address_label": "Physical Address",
     "address": "Opposite to Vasavi Mansion, Agrahara Road, Kote, Chikkamagaluru - 577101",
     "hotlineLabel": "Direct hotline",
     "inboxLabel": "Official inbox",
-    "formEyebrow": "Inquiry form",
-    "formTitle": "Admission Desk",
-    "form_name": "Full Name",
-    "form_phone": "Phone Number",
-    "form_course": "Choose Program",
-    "form_select_placeholder": "Select an option",
-    "course_options": {
-      "typing": "Typewriting (KSEAB Streams)",
-      "shorthand": "Shorthand & Stenography",
-      "computers": "Computer Education & Office Automation"
-    },
-    "form_submit": "Send Admission Inquiry",
-    "form_success": "Inquiry successfully submitted! Our administrative desk will contact you shortly."
+    "callEyebrow": "Call for admission",
+    "callTitle": "Speak directly with the institute.",
+    "callText": "For course details, batches, fees, and admission guidance, please call the institute directly.",
+    "callButton": "Call +91 9448201966",
+    "callNoteLabel": "Further communication",
+    "callNote": "The institute team will guide you over the phone and help you with the next steps."
   }
 }
