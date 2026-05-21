@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 
-export default function InquiryForm({ lang, d }) {
+export default function InquiryForm({ d }) {
   const [formData, setFormData] = useState({ name: '', phone: '', course: '' });
   const [success, setSuccess] = useState(false);
 
@@ -48,10 +48,10 @@ export default function InquiryForm({ lang, d }) {
           onChange={(e) => setFormData({...formData, course: e.target.value})}
           className="w-full border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm font-semibold text-slate-900 transition focus:border-amber-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-amber-500/15"
         >
-          <option value="">-- {lang === 'en' ? 'Select an option' : 'ವಿಭಾಗವನ್ನು ಆರಿಸಿ'} --</option>
-          <option value="typing">Typewriting (KSEAB Streams)</option>
-          <option value="shorthand">Shorthand & Stenography</option>
-          <option value="computers">Computer Education & Office Automation</option>
+          <option value="">-- {d.contact.form_select_placeholder} --</option>
+          <option value="typing">{d.contact.course_options.typing}</option>
+          <option value="shorthand">{d.contact.course_options.shorthand}</option>
+          <option value="computers">{d.contact.course_options.computers}</option>
         </select>
       </div>
       <button 

@@ -34,64 +34,64 @@ export default async function MainWebParadise({ params }) {
 
   const navItems = [
     { href: '#legacy', label: d.nav.about },
-    { href: '#results', label: 'Results' },
+    { href: '#results', label: d.nav.results },
     { href: '#courses', label: d.nav.courses },
-    { href: '#toppers', label: 'Toppers' },
+    { href: '#toppers', label: d.nav.toppers },
     { href: '#contact', label: d.nav.contact },
   ];
 
   const stats = [
     {
       value: '50+',
-      label: 'Years of trusted commerce education',
-      detail: 'Established in 1975',
+      label: d.stats.years.label,
+      detail: d.stats.years.detail,
       icon: Award,
       color: 'text-amber-500',
     },
     {
       value: '25,000+',
-      label: 'Students trained for career-ready skills',
-      detail: 'Across generations in Karnataka',
+      label: d.stats.students.label,
+      detail: d.stats.students.detail,
       icon: Users,
       color: 'text-cyan-500',
     },
     {
       value: '100%',
-      label: 'Result-focused training culture',
-      detail: 'Consistent examination discipline',
+      label: d.stats.result.label,
+      detail: d.stats.result.detail,
       icon: ShieldCheck,
       color: 'text-emerald-500',
     },
     {
       value: '#1',
-      label: 'Known for precision and speed practice',
-      detail: 'Typewriting, shorthand, computers',
+      label: d.stats.precision.label,
+      detail: d.stats.precision.detail,
       icon: Trophy,
       color: 'text-rose-500',
     },
   ];
 
   const resultMetrics = [
-    { value: '95+', label: 'Speed' },
-    { value: '99%', label: 'Accuracy' },
-    { value: '4x', label: 'Revision' },
-    { value: '12+', label: 'Mock Tests' },
+    { value: '95+', label: d.resultMetrics.speed },
+    { value: '99%', label: d.resultMetrics.accuracy },
+    { value: '4x', label: d.resultMetrics.revision },
+    { value: '12+', label: d.resultMetrics.mockTests },
   ];
 
   const excellenceTracks = [
     {
-      title: 'Karnataka Excellence Standard',
-      text: 'A disciplined academic system built around speed, accuracy, neatness, exam rhythm, and confidence.',
+      title: d.excellenceTracks[0].title,
+      text: d.excellenceTracks[0].text,
       icon: Target,
     },
     {
-      title: '100% Result Mindset',
-      text: 'Regular practice, correction cycles, revision schedules, and personal attention help students stay exam-ready.',
+      title: d.excellenceTracks[1].title,
+      text: d.excellenceTracks[1].text,
       icon: CheckCircle2,
     },
     {
-      title: 'Future-Ready Skill Rooms',
-      text: 'Traditional typewriting discipline meets modern computer education and office automation training.',
+      title: d.excellenceTracks[2].title,
+      text: d.excellenceTracks[2].text,
       icon: Sparkles,
     },
   ];
@@ -100,64 +100,49 @@ export default async function MainWebParadise({ params }) {
     {
       name: d.courses.c1,
       code: '01',
-      description: 'Junior and senior level typing practice with accuracy drills, speed targets, and KSEAB-style readiness.',
+      description: d.courses.descriptions[0],
       icon: Keyboard,
       accent: 'bg-amber-500',
     },
     {
       name: d.courses.c2,
       code: '02',
-      description: 'Focused shorthand and stenography coaching for students aiming at court, office, and government pathways.',
+      description: d.courses.descriptions[1],
       icon: Gauge,
       accent: 'bg-cyan-500',
     },
     {
       name: d.courses.c3,
       code: '03',
-      description: 'Office automation, practical computer education, document work, and employability-oriented digital skills.',
+      description: d.courses.descriptions[2],
       icon: MonitorCog,
       accent: 'bg-emerald-500',
     },
   ];
 
-  const futureSystems = [
-    'Smart weekly practice targets',
-    'Speed and accuracy improvement routines',
-    'Exam-format mock assessments',
-    'Personal correction and feedback',
-    'Career pathway guidance',
-    'Digital office skill development',
-  ];
+  const futureSystems = d.futureSystems;
 
-  const marqueeItems = [
-    'Shree Venkateshwara Institute of Commerce',
-    '100% Result-Focused Culture',
-    '25,000+ Students Trained',
-    'Karnataka Excellence Standard',
-    'Typewriting',
-    'Shorthand',
-    'Computer Education',
-  ];
+  const marqueeItems = d.marqueeItems;
 
   const academySignals = [
     {
-      title: 'Precision Practice Studio',
-      text: 'Daily rhythm, timed drills, neatness control, and speed-building routines.',
+      title: d.academySignals[0].title,
+      text: d.academySignals[0].text,
       icon: Target,
     },
     {
-      title: 'Result Command System',
-      text: 'Mock examinations, correction cycles, and revision plans built around performance.',
+      title: d.academySignals[1].title,
+      text: d.academySignals[1].text,
       icon: BadgeCheck,
     },
     {
-      title: 'Digital Commerce Lab',
-      text: 'Computer education and office automation skills shaped for modern workplaces.',
+      title: d.academySignals[2].title,
+      text: d.academySignals[2].text,
       icon: Cpu,
     },
     {
-      title: 'Career Launch Track',
-      text: 'Guidance for court, office, administration, and documentation pathways.',
+      title: d.academySignals[3].title,
+      text: d.academySignals[3].text,
       icon: Zap,
     },
   ];
@@ -165,33 +150,28 @@ export default async function MainWebParadise({ params }) {
   const toppers = [
     {
       rank: '01',
-      name: 'Latest Examination Topper',
-      stream: 'Typewriting Senior',
-      result: 'Distinction performance',
-      note: 'Official name and marks ready to update',
+      name: d.toppers[0].name,
+      stream: d.toppers[0].stream,
+      result: d.toppers[0].result,
+      note: d.toppers[0].note,
     },
     {
       rank: '02',
-      name: 'Latest Examination Topper',
-      stream: 'Shorthand and Stenography',
-      result: 'High accuracy performance',
-      note: 'Official name and marks ready to update',
+      name: d.toppers[1].name,
+      stream: d.toppers[1].stream,
+      result: d.toppers[1].result,
+      note: d.toppers[1].note,
     },
     {
       rank: '03',
-      name: 'Latest Examination Topper',
-      stream: 'Computer Education',
-      result: 'Excellent practical performance',
-      note: 'Official name and marks ready to update',
+      name: d.toppers[2].name,
+      stream: d.toppers[2].stream,
+      result: d.toppers[2].result,
+      note: d.toppers[2].note,
     },
   ];
 
-  const pathways = [
-    'Court typist and stenographer roles',
-    'Office administration careers',
-    'Government examination preparation',
-    'Private sector documentation roles',
-  ];
+  const pathways = d.pathways;
 
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-[#f6f3ee] text-slate-950">
@@ -200,16 +180,16 @@ export default async function MainWebParadise({ params }) {
           <a href="#hero" className="flex min-w-0 items-center gap-3">
             <Image
               src="/images/logo.png"
-              alt="Shree Venkateshwara Institute of Commerce logo"
+              alt={d.common.logoAlt}
               width={54}
               height={54}
               className="h-10 w-10 rounded-md object-contain brightness-110 sm:h-12 sm:w-12"
               priority
             />
             <div className="min-w-0">
-              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-amber-300">Est. 1975</p>
+              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-amber-300">{d.common.established}</p>
               <h1 className="max-w-[145px] truncate text-xs font-extrabold tracking-tight min-[420px]:max-w-[190px] sm:max-w-none sm:text-base">
-                Shree Venkateshwara Institute of Commerce
+                {d.common.instituteName}
               </h1>
             </div>
           </a>
@@ -228,7 +208,7 @@ export default async function MainWebParadise({ params }) {
               className="hidden items-center gap-2 rounded-md bg-white px-4 py-2 text-xs font-bold text-slate-950 transition hover:bg-amber-200 sm:flex"
             >
               <Phone className="h-4 w-4" />
-              Call Now
+              {d.common.phoneCta}
             </a>
             <LanguageSwitcher />
           </div>
@@ -247,17 +227,17 @@ export default async function MainWebParadise({ params }) {
             <div className="max-w-4xl">
               <div className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-amber-300/30 bg-amber-300/10 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-amber-200 shadow-lg shadow-amber-950/20 backdrop-blur sm:px-4 sm:text-xs sm:tracking-[0.26em]">
                 <Sparkles className="h-4 w-4" />
-                Karnataka&apos;s trusted commerce skill institute
+                {d.hero.eyebrow}
               </div>
               <h2 className="sv-title-glow max-w-4xl text-4xl font-black leading-[0.98] tracking-tight text-white sm:text-6xl sm:leading-[0.92] lg:text-7xl">
-                Shree Venkateshwara Institute of Commerce
+                {d.hero.title}
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-7 text-slate-200 sm:mt-6 sm:text-xl sm:leading-8">
-                Known by generations for typewriting, shorthand, stenography, computer education, and a result-first training culture in Chikkamagaluru, Karnataka.
+                {d.hero.subtitle}
               </p>
 
               <div className="mt-6 grid max-w-2xl grid-cols-1 gap-2 sm:mt-7 sm:grid-cols-3 sm:gap-3">
-                {['Est. 1975', 'Chikkamagaluru', 'Karnataka Results'].map((item) => (
+                {d.hero.facts.map((item) => (
                   <div key={item} className="border border-white/10 bg-slate-950/45 px-3 py-3 text-[10px] font-black uppercase tracking-[0.15em] text-slate-200 backdrop-blur sm:px-4 sm:text-xs">
                     {item}
                   </div>
@@ -269,14 +249,14 @@ export default async function MainWebParadise({ params }) {
                   href="#contact"
                   className="inline-flex items-center justify-center gap-2 rounded-md bg-amber-400 px-5 py-3.5 text-sm font-black text-slate-950 shadow-xl shadow-amber-400/20 transition hover:bg-amber-300 sm:px-6 sm:py-4"
                 >
-                  Start Admission Inquiry
+                  {d.hero.cta}
                   <ArrowRight className="h-4 w-4" />
                 </a>
                 <a
                   href="#results"
                   className="inline-flex items-center justify-center gap-2 rounded-md border border-white/20 bg-white/10 px-5 py-3.5 text-sm font-bold text-white backdrop-blur transition hover:bg-white/15 sm:px-6 sm:py-4"
                 >
-                  View 100% Result Legacy
+                  {d.hero.secondaryCta}
                 </a>
               </div>
 
@@ -336,10 +316,10 @@ export default async function MainWebParadise({ params }) {
               <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-4">
                 <div className="min-w-0">
                   <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-cyan-300 sm:text-xs">
-                    Result System
+                    {d.resultSystem.eyebrow}
                   </p>
                   <h3 className="mt-1 text-xl font-black leading-tight sm:text-2xl lg:text-3xl">
-                    100% Focus Dashboard
+                    {d.resultSystem.title}
                   </h3>
                 </div>
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-emerald-400 text-slate-950 sm:h-14 sm:w-14">
@@ -367,22 +347,22 @@ export default async function MainWebParadise({ params }) {
 
               <div className="mt-5 border border-amber-300/20 bg-amber-300/10 p-4">
                 <p className="text-[10px] font-black uppercase tracking-[0.22em] text-amber-200 sm:text-xs">
-                  Academic signal
+                  {d.resultSystem.academicSignalTitle}
                 </p>
                 <p className="mt-2 text-xs font-semibold leading-6 text-slate-200 sm:text-sm">
-                  A half-century institution with a modern presentation for today&apos;s students and parents.
+                  {d.resultSystem.academicSignalText}
                 </p>
               </div>
             </div>
 
             <div className="space-y-5">
               <div>
-                <p className="text-xs font-black uppercase tracking-[0.24em] text-cyan-300 sm:text-sm sm:tracking-[0.28em]">Modern academic presence</p>
+                <p className="text-xs font-black uppercase tracking-[0.24em] text-cyan-300 sm:text-sm sm:tracking-[0.28em]">{d.modernPresence.eyebrow}</p>
                 <h2 className="mt-3 text-3xl font-black tracking-tight sm:mt-4 sm:text-5xl">
-                  Serious education, presented with the confidence it deserves.
+                  {d.modernPresence.title}
                 </h2>
                 <p className="mt-4 text-base leading-7 text-slate-300 sm:mt-6 sm:text-lg sm:leading-8">
-                  The site now feels more like a premium institution: immersive video, sharper messaging, and clear proof points for parents and students.
+                  {d.modernPresence.text}
                 </p>
               </div>
 
@@ -413,26 +393,26 @@ export default async function MainWebParadise({ params }) {
               <div className="relative overflow-hidden bg-white p-3 shadow-2xl shadow-slate-900/10">
                 <Image
                   src="/images/principal.png"
-                  alt="Principal Krishnashetty K P"
+                  alt={d.common.principalAlt}
                   width={520}
                   height={680}
                   className="aspect-[4/5] w-full object-cover"
                 />
                 <div className="absolute bottom-4 left-4 right-4 bg-slate-950/90 p-4 text-white backdrop-blur sm:bottom-6 sm:left-6 sm:right-6 sm:p-5">
-                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-amber-300">Academic Leadership</p>
-                  <h3 className="mt-2 text-lg font-black sm:text-xl">Krishnashetty K P</h3>
+                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-amber-300">{d.legacy.leadershipEyebrow}</p>
+                  <h3 className="mt-2 text-lg font-black sm:text-xl">{d.common.principalName}</h3>
                   <p className="mt-1 text-sm text-slate-300">{d.about.subtitle}</p>
                 </div>
               </div>
             </div>
 
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-amber-700 sm:text-sm sm:tracking-[0.28em]">People know us by the full name</p>
+              <p className="text-xs font-black uppercase tracking-[0.22em] text-amber-700 sm:text-sm sm:tracking-[0.28em]">{d.legacy.eyebrow}</p>
               <h2 className="mt-4 text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">
-                Not just SVIC. A landmark called Shree Venkateshwara Institute of Commerce.
+                {d.legacy.title}
               </h2>
               <p className="mt-5 max-w-3xl text-base leading-7 text-slate-700 sm:mt-6 sm:text-lg sm:leading-8">
-                Since 1975, the institute has helped students build practical commercial skills with discipline, personal guidance, and examination-focused preparation. Our identity is rooted in Chikkamagaluru, but our students carry the name across Karnataka through results, careers, and confidence.
+                {d.legacy.text}
               </p>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-3">
@@ -455,28 +435,28 @@ export default async function MainWebParadise({ params }) {
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
               <div>
-                <p className="text-xs font-black uppercase tracking-[0.22em] text-emerald-300 sm:text-sm sm:tracking-[0.28em]">100% result tradition</p>
+                <p className="text-xs font-black uppercase tracking-[0.22em] text-emerald-300 sm:text-sm sm:tracking-[0.28em]">{d.results.eyebrow}</p>
                 <h2 className="mt-4 text-3xl font-black tracking-tight sm:text-5xl">
-                  Built to excel in Karnataka, batch after batch.
+                  {d.results.title}
                 </h2>
                 <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:mt-6 sm:text-lg sm:leading-8">
-                  The institute is shaped around careful practice, strict evaluation, and steady mentoring so students can perform with speed and accuracy when the examination clock starts.
+                  {d.results.text}
                 </p>
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="border border-emerald-300/30 bg-emerald-300 p-5 text-slate-950 sm:p-6">
                   <p className="text-5xl font-black tracking-tight sm:text-6xl">100%</p>
-                  <p className="mt-2 text-lg font-black">Result-focused preparation</p>
+                  <p className="mt-2 text-lg font-black">{d.results.focusTitle}</p>
                   <p className="mt-3 text-sm font-semibold leading-6 text-slate-800">
-                    Highlighting the institute&apos;s consistent commitment to complete student success.
+                    {d.results.focusText}
                   </p>
                 </div>
                 <div className="border border-white/10 bg-white/10 p-5 sm:p-6">
                   <Crown className="h-9 w-9 text-amber-300" />
-                  <p className="mt-5 text-2xl font-black">Karnataka Excellence</p>
+                  <p className="mt-5 text-2xl font-black">{d.results.excellenceTitle}</p>
                   <p className="mt-3 text-sm leading-6 text-slate-300">
-                    A reputation built on precision training, examination discipline, and long-term student outcomes.
+                    {d.results.excellenceText}
                   </p>
                 </div>
               </div>
@@ -502,13 +482,13 @@ export default async function MainWebParadise({ params }) {
           <div className="mx-auto max-w-7xl">
             <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
               <div>
-                <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-700 sm:text-sm sm:tracking-[0.28em]">Professional skill streams</p>
+                <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-700 sm:text-sm sm:tracking-[0.28em]">{d.courses.eyebrow}</p>
                 <h2 className="mt-4 text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">
-                  Courses that turn practice into employable confidence.
+                  {d.courses.title}
                 </h2>
               </div>
               <p className="max-w-xl text-base leading-7 text-slate-600">
-                Every stream is designed for real examination performance and practical workplace use.
+                {d.courses.intro}
               </p>
             </div>
 
@@ -521,12 +501,12 @@ export default async function MainWebParadise({ params }) {
                       <div className={`flex h-12 w-12 items-center justify-center text-white ${course.accent}`}>
                         <Icon className="h-6 w-6" />
                       </div>
-                      <p className="font-mono text-sm font-black text-slate-400">COURSE {course.code}</p>
+                      <p className="font-mono text-sm font-black uppercase text-slate-400">{d.courses.courseLabel} {course.code}</p>
                     </div>
                     <h3 className="mt-6 text-xl font-black leading-tight text-slate-950 sm:mt-8 sm:text-2xl">{course.name}</h3>
                     <p className="mt-4 text-sm leading-7 text-slate-600">{course.description}</p>
                     <div className="mt-8 flex items-center gap-2 text-sm font-black text-slate-950">
-                      Explore stream
+                      {d.courses.exploreLabel}
                       <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
                     </div>
                   </article>
@@ -539,12 +519,12 @@ export default async function MainWebParadise({ params }) {
         <section className="bg-[#0f766e] px-4 py-16 text-white sm:px-6 sm:py-24 lg:px-10">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center xl:gap-12">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-amber-200 sm:text-sm sm:tracking-[0.28em]">Futuristic training model</p>
+              <p className="text-xs font-black uppercase tracking-[0.22em] text-amber-200 sm:text-sm sm:tracking-[0.28em]">{d.trainingModel.eyebrow}</p>
               <h2 className="mt-4 text-3xl font-black tracking-tight sm:text-5xl">
-                A modern institute experience for serious students.
+                {d.trainingModel.title}
               </h2>
               <p className="mt-5 text-base leading-7 text-teal-50 sm:mt-6 sm:text-lg sm:leading-8">
-                The new academic presentation is designed around clarity, momentum, and measurable progress, so visitors immediately understand what the institute stands for.
+                {d.trainingModel.text}
               </p>
             </div>
 
@@ -564,12 +544,12 @@ export default async function MainWebParadise({ params }) {
         <section id="toppers" className="bg-[#f6f3ee] px-4 py-16 sm:px-6 sm:py-24 lg:px-10">
           <div className="mx-auto max-w-7xl">
             <div className="mx-auto max-w-3xl text-center">
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-rose-700 sm:text-sm sm:tracking-[0.28em]">Last examination toppers</p>
+              <p className="text-xs font-black uppercase tracking-[0.22em] text-rose-700 sm:text-sm sm:tracking-[0.28em]">{d.toppersSection.eyebrow}</p>
               <h2 className="mt-4 text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">
-                Celebrating the students who set the pace.
+                {d.toppersSection.title}
               </h2>
               <p className="mt-6 text-base leading-7 text-slate-600">
-                A dedicated topper showcase is now ready for the latest official names, photos, marks, and stream-wise achievements.
+                {d.toppersSection.text}
               </p>
             </div>
 
@@ -577,7 +557,7 @@ export default async function MainWebParadise({ params }) {
               {toppers.map((topper) => (
                 <article key={topper.rank} className="relative overflow-hidden border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
                   <div className="absolute right-0 top-0 bg-slate-950 px-5 py-3 font-mono text-sm font-black text-white">
-                    RANK {topper.rank}
+                    {d.toppersSection.rankLabel} {topper.rank}
                   </div>
                   <div className="flex h-16 w-16 items-center justify-center rounded-full bg-amber-100 text-amber-700">
                     <Star className="h-8 w-8 fill-amber-500 text-amber-500" />
@@ -595,9 +575,9 @@ export default async function MainWebParadise({ params }) {
         <section className="bg-white px-4 py-16 sm:px-6 sm:py-24 lg:px-10">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_1fr]">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-amber-700 sm:text-sm sm:tracking-[0.28em]">Career pathways</p>
+              <p className="text-xs font-black uppercase tracking-[0.22em] text-amber-700 sm:text-sm sm:tracking-[0.28em]">{d.career.eyebrow}</p>
               <h2 className="mt-4 text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">
-                Training that connects classrooms to real opportunities.
+                {d.career.title}
               </h2>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
@@ -614,12 +594,12 @@ export default async function MainWebParadise({ params }) {
         <section id="contact" className="bg-slate-950 px-4 py-16 text-white sm:px-6 sm:py-24 lg:px-10">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-amber-300 sm:text-sm sm:tracking-[0.28em]">Admissions open</p>
+              <p className="text-xs font-black uppercase tracking-[0.22em] text-amber-300 sm:text-sm sm:tracking-[0.28em]">{d.contact.eyebrow}</p>
               <h2 className="mt-4 text-3xl font-black tracking-tight sm:text-5xl">
-                Start your journey with Shree Venkateshwara Institute of Commerce.
+                {d.contact.title}
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:mt-6 sm:text-lg sm:leading-8">
-                Visit the institute, speak with the admissions desk, or send an inquiry for course guidance.
+                {d.contact.text}
               </p>
 
               <div className="mt-8 space-y-5 sm:mt-10">
@@ -627,13 +607,13 @@ export default async function MainWebParadise({ params }) {
                   <MapPin className="mt-1 h-6 w-6 shrink-0 text-amber-300" />
                   <div>
                     <p className="text-xs font-black uppercase tracking-[0.22em] text-slate-500">{d.contact.address_label}</p>
-                    <p className="mt-2 leading-7 text-slate-200">Opposite to Vasavi Mansion, Agrahara Road, Kote, Chikkamagaluru - 577101</p>
+                    <p className="mt-2 leading-7 text-slate-200">{d.contact.address}</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
                   <Phone className="mt-1 h-6 w-6 shrink-0 text-emerald-300" />
                   <div>
-                    <p className="text-xs font-black uppercase tracking-[0.22em] text-slate-500">Direct hotline</p>
+                    <p className="text-xs font-black uppercase tracking-[0.22em] text-slate-500">{d.contact.hotlineLabel}</p>
                     <a href="tel:+919448201966" className="mt-2 block text-lg font-black text-white hover:text-amber-300">
                       +91 9448201966
                     </a>
@@ -642,7 +622,7 @@ export default async function MainWebParadise({ params }) {
                 <div className="flex gap-4">
                   <Mail className="mt-1 h-6 w-6 shrink-0 text-cyan-300" />
                   <div>
-                    <p className="text-xs font-black uppercase tracking-[0.22em] text-slate-500">Official inbox</p>
+                    <p className="text-xs font-black uppercase tracking-[0.22em] text-slate-500">{d.contact.inboxLabel}</p>
                     <a href="mailto:kpkrishnashetty@gmail.com" className="mt-2 block font-bold text-white hover:text-amber-300">
                       kpkrishnashetty@gmail.com
                     </a>
@@ -657,11 +637,11 @@ export default async function MainWebParadise({ params }) {
                   <GraduationCap className="h-7 w-7" />
                 </div>
                 <div>
-                  <p className="text-xs font-black uppercase tracking-[0.22em] text-amber-700">Inquiry form</p>
-                  <h3 className="text-2xl font-black">Admission Desk</h3>
+                  <p className="text-xs font-black uppercase tracking-[0.22em] text-amber-700">{d.contact.formEyebrow}</p>
+                  <h3 className="text-2xl font-black">{d.contact.formTitle}</h3>
                 </div>
               </div>
-              <InquiryForm lang={lang} d={d} />
+              <InquiryForm d={d} />
             </div>
           </div>
         </section>
@@ -669,10 +649,10 @@ export default async function MainWebParadise({ params }) {
 
       <footer className="border-t border-slate-800 bg-slate-950 px-4 py-8 text-center text-xs font-semibold text-slate-500 sm:px-6 lg:px-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 sm:flex-row">
-          <p>Copyright 2026 Shree Venkateshwara Institute of Commerce. All rights reserved.</p>
+          <p>{d.common.copyright}</p>
           <div className="flex items-center gap-2 text-slate-400">
             <Building2 className="h-4 w-4" />
-            Chikkamagaluru, Karnataka
+            {d.common.shortLocation}
           </div>
         </div>
       </footer>

@@ -1,37 +1,214 @@
 {
+  "common": {
+    "instituteName": "Shree Venkateshwara Institute of Commerce",
+    "shortLocation": "Chikkamagaluru, Karnataka",
+    "established": "Est. 1975",
+    "phoneCta": "Call Now",
+    "logoAlt": "Shree Venkateshwara Institute of Commerce logo",
+    "principalAlt": "Principal Krishnashetty K P",
+    "principalName": "Krishnashetty K P",
+    "copyright": "Copyright 2026 Shree Venkateshwara Institute of Commerce. All rights reserved."
+  },
   "nav": {
     "home": "Home",
     "about": "Legacy",
     "courses": "Courses",
     "placements": "Results",
+    "results": "Results",
+    "toppers": "Toppers",
     "contact": "Contact"
   },
   "hero": {
+    "eyebrow": "Karnataka's trusted commerce skill institute",
     "title": "Shree Venkateshwara Institute of Commerce",
-    "subtitle": "Karnataka's trusted commerce skill institute for typewriting, shorthand, stenography, computer education, and result-focused training since 1975.",
-    "cta": "Start Admission Inquiry"
+    "subtitle": "Known by generations for typewriting, shorthand, stenography, computer education, and a result-first training culture in Chikkamagaluru, Karnataka.",
+    "facts": ["Est. 1975", "Chikkamagaluru", "Karnataka Results"],
+    "cta": "Start Admission Inquiry",
+    "secondaryCta": "View 100% Result Legacy"
   },
   "about": {
     "title": "A 50-Year Legacy of Precision",
     "subtitle": "Guiding Careers Since 1994",
     "text": "Welcome to Shree Venkateshwara Institute of Commerce. Established in 1975, our institution has stood as a foundational milestone for commercial and technical excellence in Chikkamagaluru. For over three decades under our current administration, we have cultivated a disciplined environment optimized for speed, accuracy, confidence, and state examination success."
   },
+  "stats": {
+    "years": {
+      "label": "Years of trusted commerce education",
+      "detail": "Established in 1975"
+    },
+    "students": {
+      "label": "Students trained for career-ready skills",
+      "detail": "Across generations in Karnataka"
+    },
+    "result": {
+      "label": "Result-focused training culture",
+      "detail": "Consistent examination discipline"
+    },
+    "precision": {
+      "label": "Known for precision and speed practice",
+      "detail": "Typewriting, shorthand, computers"
+    }
+  },
+  "resultMetrics": {
+    "speed": "Speed",
+    "accuracy": "Accuracy",
+    "revision": "Revision",
+    "mockTests": "Mock Tests"
+  },
+  "excellenceTracks": [
+    {
+      "title": "Karnataka Excellence Standard",
+      "text": "A disciplined academic system built around speed, accuracy, neatness, exam rhythm, and confidence."
+    },
+    {
+      "title": "100% Result Mindset",
+      "text": "Regular practice, correction cycles, revision schedules, and personal attention help students stay exam-ready."
+    },
+    {
+      "title": "Future-Ready Skill Rooms",
+      "text": "Traditional typewriting discipline meets modern computer education and office automation training."
+    }
+  ],
+  "resultSystem": {
+    "eyebrow": "Result System",
+    "title": "100% Focus Dashboard",
+    "academicSignalTitle": "Academic signal",
+    "academicSignalText": "A half-century institution with a modern presentation for today's students and parents."
+  },
+  "modernPresence": {
+    "eyebrow": "Modern academic presence",
+    "title": "Serious education, presented with the confidence it deserves.",
+    "text": "The site now feels more like a premium institution: immersive video, sharper messaging, and clear proof points for parents and students."
+  },
+  "academySignals": [
+    {
+      "title": "Precision Practice Studio",
+      "text": "Daily rhythm, timed drills, neatness control, and speed-building routines."
+    },
+    {
+      "title": "Result Command System",
+      "text": "Mock examinations, correction cycles, and revision plans built around performance."
+    },
+    {
+      "title": "Digital Commerce Lab",
+      "text": "Computer education and office automation skills shaped for modern workplaces."
+    },
+    {
+      "title": "Career Launch Track",
+      "text": "Guidance for court, office, administration, and documentation pathways."
+    }
+  ],
+  "legacy": {
+    "leadershipEyebrow": "Academic Leadership",
+    "eyebrow": "People know us by the full name",
+    "title": "Not just SVIC. A landmark called Shree Venkateshwara Institute of Commerce.",
+    "text": "Since 1975, the institute has helped students build practical commercial skills with discipline, personal guidance, and examination-focused preparation. Our identity is rooted in Chikkamagaluru, but our students carry the name across Karnataka through results, careers, and confidence."
+  },
+  "results": {
+    "eyebrow": "100% result tradition",
+    "title": "Built to excel in Karnataka, batch after batch.",
+    "text": "The institute is shaped around careful practice, strict evaluation, and steady mentoring so students can perform with speed and accuracy when the examination clock starts.",
+    "focusTitle": "Result-focused preparation",
+    "focusText": "Highlighting the institute's consistent commitment to complete student success.",
+    "excellenceTitle": "Karnataka Excellence",
+    "excellenceText": "A reputation built on precision training, examination discipline, and long-term student outcomes."
+  },
   "courses": {
-    "title": "Professional Skill Streams",
+    "eyebrow": "Professional skill streams",
+    "title": "Courses that turn practice into employable confidence.",
+    "intro": "Every stream is designed for real examination performance and practical workplace use.",
+    "courseLabel": "Course",
+    "exploreLabel": "Explore stream",
     "c1": "Typewriter Mechanical Typing (KSEAB Junior/Senior)",
     "c2": "Stenography & Shorthand Proficiency",
-    "c3": "Advanced Computer Education & Office Automation"
+    "c3": "Advanced Computer Education & Office Automation",
+    "descriptions": [
+      "Junior and senior level typing practice with accuracy drills, speed targets, and KSEAB-style readiness.",
+      "Focused shorthand and stenography coaching for students aiming at court, office, and government pathways.",
+      "Office automation, practical computer education, document work, and employability-oriented digital skills."
+    ]
   },
   "placements": {
     "title": "Court Placement Wall of Fame",
     "subtitle": "Practical evaluations directly aligned with the strict speed and accuracy benchmarks of the Karnataka School Examination and Assessment Board (KSEAB), Bengaluru."
   },
+  "trainingModel": {
+    "eyebrow": "Futuristic training model",
+    "title": "A modern institute experience for serious students.",
+    "text": "The new academic presentation is designed around clarity, momentum, and measurable progress, so visitors immediately understand what the institute stands for."
+  },
+  "futureSystems": [
+    "Smart weekly practice targets",
+    "Speed and accuracy improvement routines",
+    "Exam-format mock assessments",
+    "Personal correction and feedback",
+    "Career pathway guidance",
+    "Digital office skill development"
+  ],
+  "marqueeItems": [
+    "Shree Venkateshwara Institute of Commerce",
+    "100% Result-Focused Culture",
+    "25,000+ Students Trained",
+    "Karnataka Excellence Standard",
+    "Typewriting",
+    "Shorthand",
+    "Computer Education"
+  ],
+  "toppersSection": {
+    "eyebrow": "Last examination toppers",
+    "title": "Celebrating the students who set the pace.",
+    "text": "A dedicated topper showcase is now ready for the latest official names, photos, marks, and stream-wise achievements.",
+    "rankLabel": "Rank"
+  },
+  "toppers": [
+    {
+      "name": "Latest Examination Topper",
+      "stream": "Typewriting Senior",
+      "result": "Distinction performance",
+      "note": "Official name and marks ready to update"
+    },
+    {
+      "name": "Latest Examination Topper",
+      "stream": "Shorthand and Stenography",
+      "result": "High accuracy performance",
+      "note": "Official name and marks ready to update"
+    },
+    {
+      "name": "Latest Examination Topper",
+      "stream": "Computer Education",
+      "result": "Excellent practical performance",
+      "note": "Official name and marks ready to update"
+    }
+  ],
+  "career": {
+    "eyebrow": "Career pathways",
+    "title": "Training that connects classrooms to real opportunities."
+  },
+  "pathways": [
+    "Court typist and stenographer roles",
+    "Office administration careers",
+    "Government examination preparation",
+    "Private sector documentation roles"
+  ],
   "contact": {
-    "title": "Admissions Desk",
+    "eyebrow": "Admissions open",
+    "title": "Start your journey with Shree Venkateshwara Institute of Commerce.",
+    "text": "Visit the institute, speak with the admissions desk, or send an inquiry for course guidance.",
     "address_label": "Physical Address",
+    "address": "Opposite to Vasavi Mansion, Agrahara Road, Kote, Chikkamagaluru - 577101",
+    "hotlineLabel": "Direct hotline",
+    "inboxLabel": "Official inbox",
+    "formEyebrow": "Inquiry form",
+    "formTitle": "Admission Desk",
     "form_name": "Full Name",
     "form_phone": "Phone Number",
     "form_course": "Choose Program",
+    "form_select_placeholder": "Select an option",
+    "course_options": {
+      "typing": "Typewriting (KSEAB Streams)",
+      "shorthand": "Shorthand & Stenography",
+      "computers": "Computer Education & Office Automation"
+    },
     "form_submit": "Send Admission Inquiry",
     "form_success": "Inquiry successfully submitted! Our administrative desk will contact you shortly."
   }
