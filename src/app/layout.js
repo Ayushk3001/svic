@@ -17,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="antialiased min-h-screen bg-[#f8fafc] text-slate-900 selection:bg-amber-100 font-sans">
+      <body className="min-h-screen bg-[#0a0a14] font-sans text-white antialiased selection:bg-amber-300/30 selection:text-white">
         {children}
       </body>
     </html>
