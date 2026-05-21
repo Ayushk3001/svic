@@ -13,6 +13,7 @@ import {
   Mail,
   MapPin,
   MonitorCog,
+  Palette,
   Phone,
   ShieldCheck,
   Sparkles,
@@ -25,12 +26,18 @@ import {
 import { getDictionary } from '@/lib/dictionary';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import HeroFrameSequence from '@/components/HeroFrameSequence';
+import AnimatedCounter from '@/components/AnimatedCounter';
+import FAQAccordion from '@/components/FAQAccordion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
 export default async function MainWebParadise({ params }) {
   const { lang } = await params;
   const d = await getDictionary(lang);
+  const counterLocale = lang === 'kn' ? 'kn-IN' : 'en-IN';
+  const lightKickerClass = 'mb-2 text-xs font-bold uppercase tracking-widest text-teal-600';
+  const darkKickerClass = 'mb-2 text-xs font-bold uppercase tracking-widest text-teal-300';
+  const amberKickerClass = 'mb-2 text-xs font-bold uppercase tracking-widest text-amber-300';
 
   const navItems = [
     { href: '#legacy', label: d.nav.about },
@@ -42,28 +49,32 @@ export default async function MainWebParadise({ params }) {
 
   const stats = [
     {
-      value: '50+',
+      target: 50,
+      suffix: '+',
       label: d.stats.years.label,
       detail: d.stats.years.detail,
       icon: Award,
       color: 'text-amber-500',
     },
     {
-      value: '25,000+',
+      target: 25000,
+      suffix: '+',
       label: d.stats.students.label,
       detail: d.stats.students.detail,
       icon: Users,
       color: 'text-cyan-500',
     },
     {
-      value: '100%',
+      target: 100,
+      suffix: '%',
       label: d.stats.result.label,
       detail: d.stats.result.detail,
       icon: ShieldCheck,
       color: 'text-emerald-500',
     },
     {
-      value: '#1',
+      target: 1,
+      prefix: '#',
       label: d.stats.precision.label,
       detail: d.stats.precision.detail,
       icon: Trophy,
@@ -72,10 +83,10 @@ export default async function MainWebParadise({ params }) {
   ];
 
   const resultMetrics = [
-    { value: '95+', label: d.resultMetrics.speed },
-    { value: '99%', label: d.resultMetrics.accuracy },
-    { value: '4x', label: d.resultMetrics.revision },
-    { value: '12+', label: d.resultMetrics.mockTests },
+    { target: 95, suffix: '+', label: d.resultMetrics.speed },
+    { target: 99, suffix: '%', label: d.resultMetrics.accuracy },
+    { target: 4, suffix: 'x', label: d.resultMetrics.revision },
+    { target: 12, suffix: '+', label: d.resultMetrics.mockTests },
   ];
 
   const excellenceTracks = [
@@ -117,6 +128,13 @@ export default async function MainWebParadise({ params }) {
       description: d.courses.descriptions[2],
       icon: MonitorCog,
       accent: 'bg-emerald-500',
+    },
+    {
+      name: d.courses.c4,
+      code: '04',
+      description: d.courses.descriptions[3],
+      icon: Palette,
+      accent: 'bg-rose-500',
     },
   ];
 
@@ -172,10 +190,11 @@ export default async function MainWebParadise({ params }) {
   ];
 
   const pathways = d.pathways;
+  const faqItems = d.faq.items;
 
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-[#f6f3ee] text-slate-950">
-      <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-slate-950/90 px-4 py-3 text-white shadow-2xl shadow-slate-950/20 backdrop-blur-xl sm:px-6 lg:px-10">
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-900/80 px-4 py-3 text-white shadow-xl shadow-slate-950/15 backdrop-blur-md sm:px-6 lg:px-10">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
           <a href="#hero" className="flex min-w-0 items-center gap-3">
             <Image
@@ -186,9 +205,9 @@ export default async function MainWebParadise({ params }) {
               className="h-10 w-10 rounded-md object-contain brightness-110 sm:h-12 sm:w-12"
               priority
             />
-            <div className="min-w-0">
+            <div className="min-w-0 flex-1">
               <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-amber-300">{d.common.established}</p>
-              <h1 className="max-w-[145px] truncate text-xs font-extrabold tracking-tight min-[420px]:max-w-[190px] sm:max-w-none sm:text-base">
+              <h1 className="max-w-[10.5rem] text-[11px] font-extrabold leading-tight tracking-tight min-[390px]:max-w-[13rem] min-[460px]:max-w-[16rem] sm:max-w-none sm:text-base sm:leading-tight">
                 {d.common.instituteName}
               </h1>
             </div>
@@ -207,7 +226,7 @@ export default async function MainWebParadise({ params }) {
               render={<a href="tel:+919448201966" />}
               nativeButton={false}
               variant="secondary"
-              className="hidden h-auto items-center gap-2 rounded-md bg-white px-4 py-2 text-xs font-bold text-slate-950 transition hover:bg-amber-200 sm:flex"
+              className="hidden h-auto items-center gap-2 rounded-md bg-amber-400 px-4 py-2.5 text-xs font-black text-slate-950 shadow-lg shadow-amber-500/20 transition duration-300 ease-out hover:bg-amber-300 sm:flex"
             >
               <Phone className="h-4 w-4" />
               {d.common.phoneCta}
@@ -218,7 +237,7 @@ export default async function MainWebParadise({ params }) {
       </header>
 
       <main>
-        <section id="hero" className="sv-hero-cinema relative min-h-[92svh] overflow-hidden bg-slate-950 px-4 pt-24 text-white sm:px-6 sm:pt-28 lg:px-10">
+        <section id="hero" className="sv-hero-cinema relative min-h-[92svh] overflow-hidden bg-slate-950 px-4 pt-10 text-white sm:px-6 sm:pt-12 lg:px-10">
           <HeroFrameSequence />
           <div className="absolute inset-0 z-10 bg-[linear-gradient(90deg,rgba(2,6,23,0.98)_0%,rgba(2,6,23,0.9)_48%,rgba(2,6,23,0.46)_100%)]" />
           <div className="sv-grid absolute inset-0 z-10 opacity-35" />
@@ -296,7 +315,13 @@ export default async function MainWebParadise({ params }) {
                   <CardContent className="flex items-start gap-4 px-1 sm:px-4">
                     <Icon className={`mt-1 h-6 w-6 shrink-0 ${stat.color}`} />
                     <div>
-                      <p className="text-3xl font-black tracking-tight text-slate-950">{stat.value}</p>
+                      <AnimatedCounter
+                        target={stat.target}
+                        prefix={stat.prefix}
+                        suffix={stat.suffix}
+                        locale={counterLocale}
+                        className="text-3xl font-black tracking-tight text-slate-950"
+                      />
                       <p className="mt-1 text-sm font-bold text-slate-800">{stat.label}</p>
                       <p className="mt-1 text-xs leading-5 text-slate-500">{stat.detail}</p>
                     </div>
@@ -326,10 +351,10 @@ export default async function MainWebParadise({ params }) {
               <CardContent className="p-4 sm:p-5 lg:p-6">
               <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-4">
                 <div className="min-w-0">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-cyan-300 sm:text-xs">
+                  <p className={darkKickerClass}>
                     {d.resultSystem.eyebrow}
                   </p>
-                  <h3 className="mt-1 text-xl font-black leading-tight sm:text-2xl lg:text-3xl">
+                  <h3 className="text-xl font-black leading-tight sm:text-2xl lg:text-3xl">
                     {d.resultSystem.title}
                   </h3>
                 </div>
@@ -342,7 +367,12 @@ export default async function MainWebParadise({ params }) {
                 {resultMetrics.map((metric) => (
                   <Card key={metric.label} className="rounded-none border border-white/10 bg-white/10 py-0 text-white ring-0">
                     <CardContent className="p-3 sm:p-4">
-                      <p className="text-2xl font-black text-white sm:text-3xl">{metric.value}</p>
+                      <AnimatedCounter
+                        target={metric.target}
+                        suffix={metric.suffix}
+                        locale={counterLocale}
+                        className="text-2xl font-black text-white sm:text-3xl"
+                      />
                       <p className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-slate-400 sm:text-xs">{metric.label}</p>
                     </CardContent>
                   </Card>
@@ -360,7 +390,7 @@ export default async function MainWebParadise({ params }) {
 
               <Card className="mt-5 rounded-none border border-amber-300/20 bg-amber-300/10 py-0 text-white ring-0">
                 <CardContent className="p-4">
-                <p className="text-[10px] font-black uppercase tracking-[0.22em] text-amber-200 sm:text-xs">
+                <p className={amberKickerClass}>
                   {d.resultSystem.academicSignalTitle}
                 </p>
                 <p className="mt-2 text-xs font-semibold leading-6 text-slate-200 sm:text-sm">
@@ -373,8 +403,8 @@ export default async function MainWebParadise({ params }) {
 
             <div className="space-y-5">
               <div>
-                <p className="text-xs font-black uppercase tracking-[0.24em] text-cyan-300 sm:text-sm sm:tracking-[0.28em]">{d.modernPresence.eyebrow}</p>
-                <h2 className="mt-3 text-3xl font-black tracking-tight sm:mt-4 sm:text-5xl">
+                <p className={darkKickerClass}>{d.modernPresence.eyebrow}</p>
+                <h2 className="text-3xl font-black tracking-tight sm:text-5xl">
                   {d.modernPresence.title}
                 </h2>
                 <p className="mt-4 text-base leading-7 text-slate-300 sm:mt-6 sm:text-lg sm:leading-8">
@@ -418,7 +448,7 @@ export default async function MainWebParadise({ params }) {
                   className="aspect-[4/5] w-full object-cover"
                 />
                 <div className="absolute bottom-4 left-4 right-4 bg-slate-950/90 p-4 text-white backdrop-blur sm:bottom-6 sm:left-6 sm:right-6 sm:p-5">
-                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-amber-300">{d.legacy.leadershipEyebrow}</p>
+                  <p className={amberKickerClass}>{d.legacy.leadershipEyebrow}</p>
                   <h3 className="mt-2 text-lg font-black sm:text-xl">{d.common.principalName}</h3>
                   <p className="mt-1 text-sm text-slate-300">{d.about.subtitle}</p>
                 </div>
@@ -427,8 +457,8 @@ export default async function MainWebParadise({ params }) {
             </div>
 
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-amber-700 sm:text-sm sm:tracking-[0.28em]">{d.legacy.eyebrow}</p>
-              <h2 className="mt-4 text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">
+              <p className={lightKickerClass}>{d.legacy.eyebrow}</p>
+              <h2 className="text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">
                 {d.legacy.title}
               </h2>
               <p className="mt-5 max-w-3xl text-base leading-7 text-slate-700 sm:mt-6 sm:text-lg sm:leading-8">
@@ -457,8 +487,8 @@ export default async function MainWebParadise({ params }) {
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
               <div>
-                <p className="text-xs font-black uppercase tracking-[0.22em] text-emerald-300 sm:text-sm sm:tracking-[0.28em]">{d.results.eyebrow}</p>
-                <h2 className="mt-4 text-3xl font-black tracking-tight sm:text-5xl">
+                <p className={darkKickerClass}>{d.results.eyebrow}</p>
+                <h2 className="text-3xl font-black tracking-tight sm:text-5xl">
                   {d.results.title}
                 </h2>
                 <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:mt-6 sm:text-lg sm:leading-8">
@@ -469,7 +499,12 @@ export default async function MainWebParadise({ params }) {
               <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
                 <Card className="rounded-none border border-emerald-300/30 bg-emerald-300 py-0 text-slate-950 ring-0">
                   <CardContent className="p-5 sm:p-6">
-                    <p className="text-5xl font-black tracking-tight sm:text-6xl">100%</p>
+                    <AnimatedCounter
+                      target={100}
+                      suffix="%"
+                      locale={counterLocale}
+                      className="text-5xl font-black tracking-tight sm:text-6xl"
+                    />
                     <p className="mt-2 text-lg font-black">{d.results.focusTitle}</p>
                     <p className="mt-3 text-sm font-semibold leading-6 text-slate-800">
                       {d.results.focusText}
@@ -519,8 +554,8 @@ export default async function MainWebParadise({ params }) {
           <div className="mx-auto max-w-7xl">
             <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
               <div>
-                <p className="text-xs font-black uppercase tracking-[0.22em] text-cyan-700 sm:text-sm sm:tracking-[0.28em]">{d.courses.eyebrow}</p>
-                <h2 className="mt-4 text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">
+                <p className={lightKickerClass}>{d.courses.eyebrow}</p>
+                <h2 className="text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">
                   {d.courses.title}
                 </h2>
               </div>
@@ -529,11 +564,11 @@ export default async function MainWebParadise({ params }) {
               </p>
             </div>
 
-            <div className="mt-10 grid gap-5 sm:mt-12 lg:grid-cols-3">
+            <div className="mt-10 grid gap-5 sm:mt-12 md:grid-cols-2 xl:grid-cols-4">
               {courses.map((course) => {
                 const Icon = course.icon;
                 return (
-                  <Card key={course.code} role="article" className="group rounded-none border border-slate-200 bg-[#f9faf8] py-0 text-slate-950 ring-0 transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-900/10">
+                  <Card key={course.code} role="article" className="group rounded-md border border-slate-200 bg-[#f9faf8] py-0 text-slate-950 ring-0 transition duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.01] hover:border-teal-200 hover:shadow-2xl hover:shadow-slate-900/15">
                     <CardContent className="p-5 sm:p-6">
                       <div className="flex items-start justify-between gap-4">
                         <div className={`flex h-12 w-12 items-center justify-center text-white ${course.accent}`}>
@@ -558,8 +593,8 @@ export default async function MainWebParadise({ params }) {
         <section className="bg-[#0f766e] px-4 py-16 text-white sm:px-6 sm:py-24 lg:px-10">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center xl:gap-12">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-amber-200 sm:text-sm sm:tracking-[0.28em]">{d.trainingModel.eyebrow}</p>
-              <h2 className="mt-4 text-3xl font-black tracking-tight sm:text-5xl">
+              <p className={amberKickerClass}>{d.trainingModel.eyebrow}</p>
+              <h2 className="text-3xl font-black tracking-tight sm:text-5xl">
                 {d.trainingModel.title}
               </h2>
               <p className="mt-5 text-base leading-7 text-teal-50 sm:mt-6 sm:text-lg sm:leading-8">
@@ -585,8 +620,8 @@ export default async function MainWebParadise({ params }) {
         <section id="toppers" className="bg-[#f6f3ee] px-4 py-16 sm:px-6 sm:py-24 lg:px-10">
           <div className="mx-auto max-w-7xl">
             <div className="mx-auto max-w-3xl text-center">
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-rose-700 sm:text-sm sm:tracking-[0.28em]">{d.toppersSection.eyebrow}</p>
-              <h2 className="mt-4 text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">
+              <p className={lightKickerClass}>{d.toppersSection.eyebrow}</p>
+              <h2 className="text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">
                 {d.toppersSection.title}
               </h2>
               <p className="mt-6 text-base leading-7 text-slate-600">
@@ -596,7 +631,7 @@ export default async function MainWebParadise({ params }) {
 
             <div className="mt-10 grid gap-5 sm:mt-12 lg:grid-cols-3">
               {toppers.map((topper) => (
-                <Card key={topper.rank} role="article" className="relative rounded-none border border-slate-200 bg-white py-0 text-slate-950 shadow-sm ring-0">
+                <Card key={topper.rank} role="article" className="relative rounded-md border border-slate-200 bg-white py-0 text-slate-950 shadow-sm ring-0 transition duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.01] hover:border-teal-200 hover:shadow-2xl hover:shadow-slate-900/15">
                   <CardContent className="p-5 sm:p-6">
                     <div className="absolute right-0 top-0 bg-slate-950 px-5 py-3 font-mono text-sm font-black text-white">
                       {d.toppersSection.rankLabel} {topper.rank}
@@ -618,8 +653,8 @@ export default async function MainWebParadise({ params }) {
         <section className="bg-white px-4 py-16 sm:px-6 sm:py-24 lg:px-10">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_1fr]">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-amber-700 sm:text-sm sm:tracking-[0.28em]">{d.career.eyebrow}</p>
-              <h2 className="mt-4 text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">
+              <p className={lightKickerClass}>{d.career.eyebrow}</p>
+              <h2 className="text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">
                 {d.career.title}
               </h2>
             </div>
@@ -639,8 +674,8 @@ export default async function MainWebParadise({ params }) {
         <section id="contact" className="bg-slate-950 px-4 py-16 text-white sm:px-6 sm:py-24 lg:px-10">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(360px,520px)] lg:items-start xl:gap-14">
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-amber-300 sm:text-sm sm:tracking-[0.28em]">{d.contact.eyebrow}</p>
-              <h2 className="mt-4 text-3xl font-black tracking-tight sm:text-5xl">
+              <p className={amberKickerClass}>{d.contact.eyebrow}</p>
+              <h2 className="text-3xl font-black tracking-tight sm:text-5xl">
                 {d.contact.title}
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:mt-6 sm:text-lg sm:leading-8">
@@ -683,7 +718,7 @@ export default async function MainWebParadise({ params }) {
                     <Phone className="h-6 w-6" />
                   </div>
                   <div>
-                    <p className="text-[10px] font-black uppercase tracking-[0.18em] text-amber-700 sm:text-xs">{d.contact.callEyebrow}</p>
+                    <p className="mb-2 text-[10px] font-black uppercase tracking-widest text-amber-700 sm:text-xs">{d.contact.callEyebrow}</p>
                     <h3 className="text-xl font-black sm:text-2xl">{d.contact.callTitle}</h3>
                   </div>
                 </div>
@@ -706,6 +741,21 @@ export default async function MainWebParadise({ params }) {
                 </div>
               </CardContent>
             </Card>
+          </div>
+        </section>
+
+        <section id="faq" className="bg-[#f6f3ee] px-4 py-16 sm:px-6 sm:py-24 lg:px-10">
+          <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start xl:gap-12">
+            <div>
+              <p className={lightKickerClass}>{d.faq.eyebrow}</p>
+              <h2 className="text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">
+                {d.faq.title}
+              </h2>
+              <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 sm:mt-6">
+                {d.faq.text}
+              </p>
+            </div>
+            <FAQAccordion items={faqItems} />
           </div>
         </section>
       </main>

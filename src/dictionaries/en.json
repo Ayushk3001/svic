@@ -22,7 +22,11 @@
     "eyebrow": "Government recognised commerce skill institute",
     "title": "Shree Venkateshwara Institute of Commerce",
     "subtitle": "Karnataka's trusted institute for Typewriting, Shorthand, Computer education, 100% result-focused training, and career-ready commerce skills since 1975.",
-    "facts": ["Government Recognised", "Est. 1975", "KSEAB Exam Training"],
+    "facts": [
+      "Government Recognised",
+      "Est. 1975",
+      "KSEAB Exam Training"
+    ],
     "cta": "Call for Admission",
     "secondaryCta": "View 100% Result Legacy"
   },
@@ -100,9 +104,9 @@
   ],
   "legacy": {
     "leadershipEyebrow": "Academic Leadership",
-    "eyebrow": "People know us by the full name",
-    "title": "Not just SVIC. A landmark called Shree Venkateshwara Institute of Commerce.",
-    "text": "Since 1975, the institute has helped students build practical commercial skills with discipline, personal guidance, and examination-focused preparation. Our identity is rooted in Chikkamagaluru, but our students carry the name across Karnataka through results, careers, and confidence."
+    "eyebrow": "Trusted Since 1975",
+    "title": "A respected commerce institute built on discipline, practice, and results.",
+    "text": "For generations, Shree Venkateshwara Institute of Commerce has guided students in typewriting, shorthand, and practical computer skills through patient instruction, structured practice, and examination-focused preparation. From Chikkamagaluru, our students move forward with confidence, certification, and career-ready discipline."
   },
   "results": {
     "eyebrow": "100% result tradition",
@@ -121,14 +125,16 @@
     "intro": "Every stream is designed for real examination performance and practical workplace use.",
     "courseLabel": "Course",
     "exploreLabel": "Explore stream",
-    "c1": "Typewriter Mechanical Typing (KSEAB Junior/Senior)",
-    "c2": "Stenography & Shorthand Proficiency",
-    "c3": "Advanced Computer Education & Office Automation",
+    "c1": "Typewriting Exam Training (Kannada & English)",
+    "c2": "Shorthand Exam Training (Kannada & English)",
+    "c3": "Office Automation",
     "descriptions": [
-      "Junior and senior level typing practice with accuracy drills, speed targets, and KSEAB-style readiness.",
-      "Focused shorthand and stenography coaching for students aiming at court, office, and government pathways.",
-      "Office automation, practical computer education, document work, and employability-oriented digital skills."
-    ]
+      "KSEAB Junior and Senior typewriting exam preparation. Students begin at Junior level and progress to Senior after passing, with structured Kannada and English typing practice.",
+      "KSEAB Junior, Intermediate, and Senior shorthand exam preparation. Students begin at Junior level and move forward after passing, with training available in both Kannada and English.",
+      "Practical computer training for office work, documents, spreadsheets, presentations, typing, and day-to-day digital workplace skills.",
+      "Students who complete and pass Office Automation can move into the Graphic Designer course for creative software, layout, and design-focused computer skills."
+    ],
+    "c4": "Graphic Designer Course"
   },
   "placements": {
     "title": "Court Placement Wall of Fame",
@@ -171,7 +177,7 @@
     },
     {
       "name": "Latest Examination Topper",
-      "stream": "Shorthand and Stenography",
+      "stream": "Shorthand",
       "result": "High accuracy performance",
       "note": "Official name and marks ready to update"
     },
@@ -197,7 +203,7 @@
     "title": "Start your journey with Shree Venkateshwara Institute of Commerce.",
     "text": "Visit the institute or call the admissions desk directly for course guidance and further communication.",
     "address_label": "Physical Address",
-    "address": "Opposite to Vasavi Mansion, Agrahara Road, Kote, Chikkamagaluru - 577101",
+    "address": "Shree Venkateshwara Institute of Commerce, Opposite to Vasavi Mansion, Agrahara Road, Kote, Chikkamagaluru - 577101",
     "hotlineLabel": "Direct hotline",
     "inboxLabel": "Official inbox",
     "callEyebrow": "Call for admission",
@@ -206,5 +212,28 @@
     "callButton": "Call +91 9448201966",
     "callNoteLabel": "Further communication",
     "callNote": "The institute team will guide you over the phone and help you with the next steps."
+  },
+  "faq": {
+    "eyebrow": "Admission questions",
+    "title": "Clear answers before you visit.",
+    "text": "The most common admission questions are handled here, while course-specific guidance is best confirmed with the institute directly.",
+    "items": [
+      {
+        "question": "How do I confirm current fees for a course?",
+        "answer": "Fees can vary by course level, batch, and examination pathway. Please call the admissions desk for the latest fee details."
+      },
+      {
+        "question": "What batch timings are available for students and working candidates?",
+        "answer": "Batch timings are planned around student convenience and exam preparation schedules. Morning, evening, or special practice slots may be available depending on the active course."
+      },
+      {
+        "question": "Are the typewriting and shorthand courses government recognised?",
+        "answer": "Typing, shorthand, and computer examination pathways are connected with KSEAB certification processes. The institute will guide students on eligible levels, exam forms, and official requirements."
+      },
+      {
+        "question": "Can beginners join without prior typing or computer experience?",
+        "answer": "Yes. Beginners can start with foundational practice and progress through speed, accuracy, mock tests, and exam-format preparation under instructor guidance."
+      }
+    ]
   }
 }
