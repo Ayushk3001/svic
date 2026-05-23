@@ -13,7 +13,6 @@ import {
   Mail,
   MapPin,
   MonitorCog,
-  Palette,
   Phone,
   ShieldCheck,
   Sparkles,
@@ -128,13 +127,6 @@ export default async function MainWebParadise({ params }) {
       description: d.courses.descriptions[2],
       icon: MonitorCog,
       accent: 'bg-emerald-500',
-    },
-    {
-      name: d.courses.c4,
-      code: '04',
-      description: d.courses.descriptions[3],
-      icon: Palette,
-      accent: 'bg-rose-500',
     },
   ];
 
@@ -564,19 +556,21 @@ export default async function MainWebParadise({ params }) {
               </p>
             </div>
 
-            <div className="mt-10 grid gap-5 sm:mt-12 md:grid-cols-2 xl:grid-cols-4">
+            <div className="mt-10 grid gap-4 sm:mt-12 lg:grid-cols-3">
               {courses.map((course) => {
                 const Icon = course.icon;
                 return (
                   <Card key={course.code} role="article" className="group rounded-md border border-slate-200 bg-[#f9faf8] py-0 text-slate-950 ring-0 transition duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.01] hover:border-teal-200 hover:shadow-2xl hover:shadow-slate-900/15">
-                    <CardContent className="p-5 sm:p-6">
+                    <CardContent className="p-5 xl:p-6">
                       <div className="flex items-start justify-between gap-4">
                         <div className={`flex h-12 w-12 items-center justify-center text-white ${course.accent}`}>
                           <Icon className="h-6 w-6" />
                         </div>
                         <p className="font-mono text-sm font-black uppercase text-slate-400">{d.courses.courseLabel} {course.code}</p>
                       </div>
-                      <h3 className="mt-6 text-xl font-black leading-tight text-slate-950 sm:mt-8 sm:text-2xl">{course.name}</h3>
+                      <h3 className="mt-6 text-xl font-black leading-tight text-slate-950 xl:mt-8 xl:text-[1.65rem]">
+                        {course.name}
+                      </h3>
                       <p className="mt-4 text-sm leading-7 text-slate-600">{course.description}</p>
                       <div className="mt-8 flex items-center gap-2 text-sm font-black text-slate-950">
                         {d.courses.exploreLabel}
