@@ -496,7 +496,7 @@ export default async function MainWebParadise({ params }) {
                 </p>
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+              <div className="grid gap-4 sm:grid-cols-2">
                 <Card className="rounded-none border border-emerald-300/30 bg-emerald-300 py-0 text-slate-950 ring-0">
                   <CardContent className="p-5 sm:p-6">
                     <AnimatedCounter
@@ -520,7 +520,7 @@ export default async function MainWebParadise({ params }) {
                     </p>
                   </CardContent>
                 </Card>
-                <Card className="rounded-none border border-amber-300/25 bg-amber-300/10 py-0 text-white ring-0 sm:col-span-2 xl:col-span-1">
+                <Card className="rounded-none border border-amber-300/25 bg-amber-300/10 py-0 text-white ring-0 sm:col-span-2">
                   <CardContent className="p-5 sm:p-6">
                     <ShieldCheck className="h-9 w-9 text-amber-300" />
                     <p className="mt-5 text-2xl font-black">{d.results.certificateTitle}</p>
